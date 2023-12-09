@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>小婉莹专属抽奖</title>
+    <title>小婉莹🍬专属抽奖</title>
     <style>
       * {
         margin: 0;
@@ -144,7 +144,7 @@
         right: 0;
         bottom: 0;
         display: block;
-        width: 50px;
+        width: 70px;
         height: 70px;
         margin: auto;
         transform: rotate(-45deg);
@@ -164,7 +164,7 @@
         background: #fff;
       }
       .turntable-wrap .turntable .gift li.no-gift span {
-        line-height: 70px;
+        line-height: 27px;
         color: #bfa74f;
         font-size: 12px;
       }
@@ -216,7 +216,7 @@
     <script>
       // 单例模式，转盘唯一，用对象字面量方式表示
       let turntable = {
-        itemNum: 5, // 转盘平均分几块
+        itemNum: 10, // 转盘平均分几块
 
         lightNum: 18, // 转盘上的灯
         light: null, // 转盘旋转灯容器
@@ -232,11 +232,16 @@
         lottery: [], // 中奖数据
 
         typeMap: {
-          1: "请看电影",
-          2: "喝奶茶",
+          1: "看一场烟花",
+          2: "去看花海",
           3: "短途旅游",
-          4: "买衣服",
-          5: "请吃饭",
+          4: "去游乐园玩",
+          5: "露营",
+          6: "泡温泉",
+          7: "游泳",
+          8: "看日出日落",
+          9: "放风筝",
+          10: "去寺庙祈福",
         },
         typeClassMap: {
           1: "no-gift",
@@ -244,6 +249,11 @@
           3: "no-gift",
           4: "no-gift",
           5: "no-gift",
+          6: "no-gift",
+          7: "no-gift",
+          8: "no-gift",
+          9: "no-gift",
+          10: "no-gift",
         },
 
         isGoing: false, // 游戏是否开始
@@ -332,11 +342,16 @@
       };
 
       let lottery = [
-        { location: 1, type: 1, rate: 20 }, // 请看电影
-        { location: 2, type: 2, rate: 20 }, // 喝奶茶
-        { location: 3, type: 3, rate: 20 }, // 散步
-        { location: 4, type: 4, rate: 20 }, // 买衣服
-        { location: 5, type: 5, rate: 20 }, // 请吃饭
+        { location: 1, type: 1, rate: 10 },
+        { location: 2, type: 2, rate: 10 },
+        { location: 3, type: 3, rate: 10 },
+        { location: 4, type: 4, rate: 10 },
+        { location: 5, type: 5, rate: 10 },
+        { location: 6, type: 6, rate: 10 },
+        { location: 7, type: 7, rate: 10 },
+        { location: 8, type: 8, rate: 10 },
+        { location: 9, type: 9, rate: 10 },
+        { location: 10, type: 10, rate: 10 },
       ];
 
       turntable.turntable = document.querySelector("#turntable");
