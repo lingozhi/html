@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>简单转盘</title>
+    <title>小婉莹专属抽奖</title>
     <style>
       * {
         margin: 0;
@@ -147,12 +147,10 @@
         width: 50px;
         height: 70px;
         margin: auto;
-        background: yellow;
         transform: rotate(-45deg);
         text-align: center;
         line-height: 80px;
         border-radius: 5px;
-        background: #f23c3c;
         color: #fff;
         font-size: 24px;
       }
@@ -166,7 +164,6 @@
         background: #fff;
       }
       .turntable-wrap .turntable .gift li.no-gift span {
-        background: #fff;
         line-height: 70px;
         color: #bfa74f;
         font-size: 12px;
@@ -219,7 +216,7 @@
     <script>
       // 单例模式，转盘唯一，用对象字面量方式表示
       let turntable = {
-        itemNum: 6, // 转盘平均分几块
+        itemNum: 5, // 转盘平均分几块
 
         lightNum: 18, // 转盘上的灯
         light: null, // 转盘旋转灯容器
@@ -234,8 +231,20 @@
 
         lottery: [], // 中奖数据
 
-        typeMap: { 1: "¥", 2: "谢谢参与" },
-        typeClassMap: { 1: "", 2: "no-gift" },
+        typeMap: {
+          1: "请看电影",
+          2: "喝奶茶",
+          3: "短途旅游",
+          4: "买衣服",
+          5: "请吃饭",
+        },
+        typeClassMap: {
+          1: "no-gift",
+          2: "no-gift",
+          3: "no-gift",
+          4: "no-gift",
+          5: "no-gift",
+        },
 
         isGoing: false, // 游戏是否开始
 
@@ -323,20 +332,11 @@
       };
 
       let lottery = [
-        {
-          location: 1, // 位置
-          type: 1, // 中奖
-          rate: 30,
-        },
-        {
-          location: 2,
-          type: 2, // 未中奖
-          rate: 20,
-        },
-        { location: 3, type: 1, rate: 10 },
-        { location: 4, type: 2, rate: 20 },
-        { location: 5, type: 1, rate: 10 },
-        { location: 6, type: 2, rate: 10 },
+        { location: 1, type: 1, rate: 20 }, // 请看电影
+        { location: 2, type: 2, rate: 20 }, // 喝奶茶
+        { location: 3, type: 3, rate: 20 }, // 散步
+        { location: 4, type: 4, rate: 20 }, // 买衣服
+        { location: 5, type: 5, rate: 20 }, // 请吃饭
       ];
 
       turntable.turntable = document.querySelector("#turntable");
